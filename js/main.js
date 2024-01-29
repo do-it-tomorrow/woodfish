@@ -6,9 +6,9 @@ $(".list").click(function (e) {
     var data = $(this).attr("data");
     if (data == "reset") {
         Merit = 0;
-        $(".text .text_1").text("当前功德：" + Merit);
+        $(".text .text_1").text("当前功德：" + Merit*100);
     } else if (data == "about") {
-        alert("作者：Ji-Siqi")
+        alert("作者：do-it-tomorrow")
     } else if (data == "hide") {
         
     }
