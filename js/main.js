@@ -6,7 +6,7 @@ $(".list").click(function (e) {
     var data = $(this).attr("data");
     if (data == "reset") {
         Merit = 0;
-        $(".text .text_1").text("当前功德：" + Merit*100);
+        $(".text .text_1").text("当前功德：" + Merit);
     } else if (data == "about") {
         alert("作者：do-it-tomorrow")
     } else if (data == "hide") {
@@ -41,7 +41,7 @@ function animation() {
 
 function animation_text() {
     var randomNum_1 = randomNum(0,100000)
-    $(".woodfish").append("<div id=\"text_tips_" +randomNum_1+ "\" class=\"text_tips\">功德+1</div>");
+    $(".woodfish").append("<div id=\"text_tips_" +randomNum_1+ "\" class=\"text_tips\">功德+100</div>");
     setTimeout(() => {
         $(".woodfish .text_tips").css("margin-bottom", "300px");
     }, 5);
@@ -61,9 +61,9 @@ function Data_control(Merit_data) {
     if(Merit_data == "click") {
         Merit++;
         $.cookie("Merit", Merit, { expires: 30 })
-        $(".text .text_1").text("当前功德：" + Merit);
+        $(".text .text_1").text("当前功德：" + Merit*100);
     } else {
-        $(".text .text_1").text("当前功德：" + Merit);
+        $(".text .text_1").text("当前功德：" + Merit*100);
     }
 }
 
